@@ -1,0 +1,31 @@
+{
+  "name": "animated-lamp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build:api && npm run build:client",
+    "build:api": "cd api && npm ci && npm run prebuild && npm run build && npm prune",
+    "build:client": "cd client && npm ci && npm run build && npm prune",
+    "start": "cd api && node dist/main.js",
+    "dev": "concurrently -n api,client -k \"npm run dev:api\" \"npm run dev:client\"",
+    "dev:api": "cd api && npm run start:dev",
+    "dev:client": "cd client && npm start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SCollinA/animated-lamp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SCollinA/animated-lamp/issues"
+  },
+  "homepage": "https://github.com/SCollinA/animated-lamp#readme",
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "dotenv": "^8.2.0"
+  }
+}
