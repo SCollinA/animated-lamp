@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "npm run build:api && npm run build:client",
-    "build:api": "cd api && npm ci && npm run prebuild && npm run build && npm prune",
-    "build:client": "cd client && npm ci && npm run build && npm prune",
+    "build:api": "cd api && npm ci --also-dev && npm run prebuild && npm run build && npm prune",
+    "build:client": "cd client && npm ci --also-dev && npm run build && npm prune",
     "start": "cd api && node dist/main.js",
     "dev": "concurrently -n api,client -k \"npm run dev:api\" \"npm run dev:client\"",
     "dev:api": "cd api && npm run start:dev",
