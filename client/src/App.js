@@ -6,7 +6,7 @@ import { useCallback, useEffect, useState } from "react";
 function App() {
   const [hello, setHello] = useState(null);
   const getHello = useCallback(async () => {
-    const response = await axios.get(process.env.REACT_APP_API_URL);
+    const response = await axios.get(process.env.REACT_APP_API_URL + "/hello");
     setHello(response);
   }, []);
   useEffect(() => {
